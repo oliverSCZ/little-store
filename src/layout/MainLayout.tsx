@@ -1,6 +1,11 @@
 import { FC } from 'react'
+import { Header } from '../components'
 
-export const MainLayout:FC = ({ children }) => {
+interface Props {
+  children: JSX.Element | JSX.Element[],
+}
+
+export const MainLayout:FC<Props> = ({ children}) => {
   return (
     <>
           { /* Header */}
@@ -9,7 +14,7 @@ export const MainLayout:FC = ({ children }) => {
           <main>
             { children }
           </main>
-
           { /* productos favoritos */}
     </>
+  )
 }

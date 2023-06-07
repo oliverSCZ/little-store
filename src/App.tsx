@@ -1,12 +1,15 @@
-import React from 'react'
+import { MainLayout} from './layout/MainLayout';
 
 const App = () => {
   return (
-    <>
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </>
+    <MainLayout>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+  </MainLayout>
   )
 }
 
