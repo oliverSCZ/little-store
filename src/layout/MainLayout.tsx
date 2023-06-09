@@ -11,7 +11,7 @@ export const MainLayout:FC<Props> = ({ children}) => {
           { /* Header */}
             <Header />
           { /* contenido principal */}
-          <main>
+          <main className='py-10 px-10'>
             { children }
           </main>
           { /* productos favoritos */}

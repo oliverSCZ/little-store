@@ -1,18 +1,12 @@
-import { useContext} from 'react';
 import { MainLayout } from './layout/MainLayout';
-import { ProductContext } from './context/products';
+import { ProductList } from './components';
 
 const App = () => {
-
-  const contexto = useContext(ProductContext);
-  console.log({ contexto });
 
   return (
     <MainLayout>
       {/* LISTADO DE PRODUCTOS */}
-    <div>
-
-    </div>
+    <ProductList />
     <div>
 
     </div>
