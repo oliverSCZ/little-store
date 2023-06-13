@@ -17,10 +17,13 @@ const getAllProducts = async() => {
   // const data = await fetch('https://fakestoreapi.com/products');
   // const response = await data.json();
   // console.log({ response });
-  setisLoading( true );
+  // setisLoading( true );
+  setTimeout(() => {
+    setisLoading(false);
+    }, 4000);
   const {data} = await productsDb.get('/products');
-  setisLoading( false );
-  setProducts(data);
+  setisLoading( true );
+  setProducts(data.products);
 };
 
 useEffect(() => {

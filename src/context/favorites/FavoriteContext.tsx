@@ -1,7 +1,9 @@
-import React from 'react'
+import { createContext } from "react";
+import { IProduct } from "../../interfaces/product";
 
-export const FavoriteContext = () => {
-  return (
-    <div>FavoriteContext</div>
-  )
+interface ContextFavorite {
+  favoritos : IProduct[];
+  addFavorite : (productId: number) => void;
 }
+
+export const FavoriteContext = createContext({}as ContextFavorite);
