@@ -1,5 +1,4 @@
-import React from 'react'
-const columnas = [];
+const columnas:JSX.Element[] = [];
 for (let i = 0; i < 4 ; i++) {
   columnas.push(
     <div className=' bg-slate-200 flex flex-col justify-center p-5 rounded-lg shadow-md'>

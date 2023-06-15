@@ -7,7 +7,6 @@ interface Props{
   children: JSX.Element;
 }
 
-
 export const ProductProvider:FC<Props> = ({ children }) => {
 
 const [products, setProducts] = useState([] as IProduct[]);
@@ -21,7 +20,7 @@ const getAllProducts = async() => {
   setTimeout(() => {
     setisLoading(false);
     }, 4000);
-  const {data} = await productsDb.get('/products');
+  const {data} = await productsDb.get('/products?limit=12');
   setisLoading( true );
   setProducts(data.products);
 };

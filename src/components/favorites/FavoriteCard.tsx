@@ -1,4 +1,4 @@
-import { FC, useContext, useState } from 'react';
+import { FC, useContext } from 'react';
 import { IProduct } from '../../interfaces/product'
 import { FavoriteContext } from '../../context/favorites';
 
@@ -6,13 +6,11 @@ interface Props{
   product:IProduct;
 }
 
-export const ProductCard:FC<Props> = ({ product }) => {
-  const { addFavorite } = useContext(FavoriteContext);
-  // const [disabled, setDisabled] = useState(false);
+export const FavoriteCard:FC<Props> = ({ product }) => {
+  const { deleteFavorite } = useContext(FavoriteContext);
 
-  const addToFavorite = (productId : number) => {
-    addFavorite(productId);
-    // setDisabled(true);
+  const deleteFromFavorite = (productId : number) => {
+    deleteFavorite(productId);
   };
 
   return (
@@ -27,10 +25,9 @@ export const ProductCard:FC<Props> = ({ product }) => {
       <p className='text-gray-500'>{product.category}</p>
       <p className='text-indigo-600'>{product.price}$</p>
       <button 
-      onClick={() => addToFavorite(product.id)}
-      // disabled={disabled}
-      className='rounded-md bg-indigo-600 cursor-pointer hover:bg-indigo-700 transition-all p-2 text-white'>
-        Agregar a Favoritos
+      onClick={() => deleteFromFavorite(product.id)}
+      className='rounded-md bg-red-600 cursor-pointer hover:bg-red-700 transition-all p-2 text-white'>
+        Eliminar de Favoritos
       </button>
       </div>
     </div>

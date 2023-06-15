@@ -1,7 +1,7 @@
 import { useContext, FC } from 'react';
 import { FavoriteContext } from '../../context/favorites/FavoriteContext'
 
-import { ProductCard, Spinner } from '..';
+import { FavoriteCard, Spinner } from '..';
 import { ProductContext } from '../../context/products';
 
 export const FavoriteList: FC = () => {
@@ -22,7 +22,7 @@ const { favoritos } = useContext(FavoriteContext);
             <div className='grid grid-cols-4 gap-10'>
             {
             favoritos.map(product =>
-              <ProductCard product={product} />
+              <FavoriteCard product={product} />
               )
             }
             </div>

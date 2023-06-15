@@ -28,6 +28,12 @@ export const FavoriteProvider:FC<Props> = ({ children }) => {
       }
   }
 
+  const deleteFavorite = (productId:number) => {
+    const newFavorites = favoritos.filter(item => item.id !== productId)
+    localStorage.setItem('Favoritos', JSON.stringify(newFavorites))
+    setFavoritos(newFavorites);
+  }
+
   useEffect(() => {
     showFavoritesLocalStorage();
   }, [])
@@ -38,6 +44,7 @@ export const FavoriteProvider:FC<Props> = ({ children }) => {
     value={{
       favoritos,
       addFavorite,
+      deleteFavorite,
     }}
     >
       {children}
